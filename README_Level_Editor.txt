@@ -90,13 +90,6 @@ Example level file:
 #                  #
 ####################
 
----
-
-Extending the Editor
-
-- Adding Tiles: Add new tile characters and names in the TILE_TYPES dictionary.
-- Adding Entities: Extend entity_properties dictionary and add property definitions in the EntityPropertyEditor.
-- Custom Properties: Modify props_def in EntityPropertyEditor to add new editable properties.
 
 ---
 
@@ -116,10 +109,8 @@ MIT License
 
 Credits
 
-Developed by Your Name.
+Developed by JEJ.
 
 Based on Pygame framework.
 
 ---
-
-If you want me to add anything else to the README, just ask!
