@@ -1,5 +1,5 @@
-import pygame 
-from settings import TILE_SIZE, GRAVITY, PLAYER_SPEED, JUMP_POWER
+import pygame
+from settings import TILE_SIZE, GRAVITY, PLAYER_SPEED, JUMP_POWER, MAX_LIVES
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -9,7 +9,11 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft=(x, y))
 
         self.direction = pygame.math.Vector2(0, 0)
-        self.on_ground = False 
+        self.on_ground = False
+
+        self.health = 100
+        self.lives = MAX_LIVES
+        self.score = 0
 
     def handle_input(self):
         keys = pygame.key.get_pressed()
@@ -19,7 +23,7 @@ class Player(pygame.sprite.Sprite):
             self.direction.x = PLAYER_SPEED
         else:
             self.direction.x = 0
-        
+
         if keys[pygame.K_SPACE] and self.on_ground:
             self.direction.y = -JUMP_POWER
             self.on_ground = False
@@ -31,11 +35,11 @@ class Player(pygame.sprite.Sprite):
     def check_collision(self, tiles):
         for tile in tiles:
             if self.rect.colliderect(tile.rect):
-                if self.direction.y > 0: #falling
+                if self.direction.y > 0:
                     self.rect.bottom = tile.rect.top
-                    self.direction.y = 0 
+                    self.direction.y = 0
                     self.on_ground = True
-                elif self.direction.y < 0: #jumping
+                elif self.direction.y < 0:
                     self.rect.top = tile.rect.bottom
                     self.direction.y = 0
 
