@@ -1,15 +1,18 @@
-                    
-                    
-                    
-                    
-                    
-                    
-          P         
-            C       
-       GGGGGGG GGGGG
-                    
-              S     
-             GGG    
-                    
-                    
-                    
+                         
+                         
+                         
+                         
+                         
+                         
+P                        
+C                        
+GGGGGGG GGGGG            
+                         
+S                        
+GGG                      
+                         
+                         
+                         
+                         
+                         
+                         
